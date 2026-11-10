@@ -63,26 +63,29 @@ Every piece is free and permissively licensed (MIT / Apache-2.0 / PostgreSQL Lic
 | App framework | **Next.js + TypeScript** | One codebase for UI and API, very widely known, easy to hire for |
 | Database | **PostgreSQL** | Reliable, free, available on every cloud and on-site |
 | Database access | **Prisma** | Type-safe queries and managed migrations |
-| Login | **Auth.js** | Plugs into Microsoft 365 (Entra ID) or Google Workspace SSO |
+| Login | **Auth.js + Microsoft Entra ID** | Staff sign in with their existing Microsoft 365 accounts; no separate passwords |
 | UI | **Tailwind CSS + shadcn/ui** | Clean, accessible components the company owns as source |
 | Drag and drop | **dnd-kit** | Boards and backlog reordering |
 | Charts | **Recharts** | Reports page |
-| Email | Company SMTP server | Notifications |
+| Email | Microsoft 365 (via Microsoft Graph) | Notifications come from a company mailbox |
 | Packaging | **Docker** | Runs the same on a laptop, on-site server, Azure or AWS |
 
 ## 6. Not in v1
 
 Sprints, time tracking, automations/rules, custom fields, file attachments, mobile app, public API, Slack/Teams integration. The data model leaves room for each of these.
 
-## 7. Open questions
+## 7. Decided
 
-1. **Hosting:** Azure, AWS, Google Cloud, or an on-site server?
-2. **Login:** Does the company sign in with Microsoft 365 or Google Workspace?
-3. **Importing:** Should existing Jira or Monday data be imported at launch?
-4. **Name:** What should the app be called internally?
-5. **Pilot team:** Which team tries it first?
+- **Login:** Microsoft 365 (Entra ID single sign-on)
 
-## 8. Build order
+## 8. Open questions
+
+1. **Hosting:** Azure (recommended, since the company already uses Microsoft), AWS, or an on-site server?
+2. **Importing:** Should existing Jira or Monday data be imported at launch?
+3. **Name:** What should the app be called internally?
+4. **Pilot team:** Which team tries it first?
+
+## 9. Build order
 
 1. **Spec** (this document)
 2. **Core app:** projects, boards, backlog, table view, tickets, comments, activity
